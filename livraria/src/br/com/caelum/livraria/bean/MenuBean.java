@@ -10,7 +10,7 @@ import javax.inject.Named;
 public class MenuBean implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-	private Integer index=0;
+	private Integer index = 0;
 	
 	public Integer getIndex() {
 		return index;
