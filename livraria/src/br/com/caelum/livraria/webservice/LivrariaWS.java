@@ -27,4 +27,24 @@ public class LivrariaWS {
 
 		return livroDao.getLivrosPeloNome(nome);
 	}
+	
+	@WebResult(name="livro")
+	public List<Livro> getLivrosDoAutor(@WebParam(name="autor") String nome) {
+
+		System.out.println("LivrariaWS: procurando livros do autor " + nome);
+
+		// aqui usaremos o DAO para executar a pesquisa
+
+		return livroDao.getLivrosPeloAutor(nome);
+	}
+	
+	@WebResult(name="livro")
+	public List<Livro> getLivrosdaEditora(@WebParam(name="editora") String nome) {
+
+		System.out.println("LivrariaWS: procurando livros da editora " + nome);
+
+		// aqui usaremos o DAO para executar a pesquisa
+
+		return livroDao.getLivrosPelaEditora(nome);
+	}
 }

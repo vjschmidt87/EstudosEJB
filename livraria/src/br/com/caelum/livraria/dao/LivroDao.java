@@ -34,6 +34,28 @@ public class LivroDao {
         return query.getResultList();
     }
 	
+	public List<Livro> getLivrosPeloAutor(String nome) {
+
+        TypedQuery<Livro> query = this.em.createQuery(
+                "select l from Livro l " + 
+                "where l.autor.id = (select a.id from Autor a " +
+                "where a.nome = :pNome)", Livro.class);
+        query.setParameter("pNome", nome);
+
+        return query.getResultList();
+    }
+	
+	public List<Livro> getLivrosPelaEditora(String nome) {
+
+        TypedQuery<Livro> query = this.em.createQuery(
+                "select l from Livro l " + 
+                "where l.editora.id = (select e.id from Editora e " +
+                "where e.nome = :pNome)", Livro.class);
+        query.setParameter("pNome", nome);
+
+        return query.getResultList();
+    }
+	
 	@PostConstruct
 	public void aposCriacao() {
 		System.out.println("LivroDAO criado");
