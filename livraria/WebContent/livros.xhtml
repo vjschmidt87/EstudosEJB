@@ -22,7 +22,13 @@
 				<p:selectOneMenu  value="#{livroBean.autorId}"  effect="fade" >  
 		            <f:selectItems value="#{livroBean.autores}" var="autor" 
 		            				itemValue="#{autor.id}" itemLabel="#{autor.nome}" />  
-		        </p:selectOneMenu>  
+		        </p:selectOneMenu>
+		        
+		        <p:outputLabel value="Editora: " />
+				<p:selectOneMenu  value="#{livroBean.editoraId}"  effect="fade" >  
+		            <f:selectItems value="#{livroBean.editoras}" var="editora" 
+		            				itemValue="#{editora.id}" itemLabel="#{editora.nome}" />  
+		        </p:selectOneMenu>    
 	
 			    <f:facet name="footer">  
 					<p:commandButton value="Salvar" action="#{livroBean.cadastra}" 
@@ -44,6 +50,10 @@
 	
 	        <p:column headerText="Autor">
 	            <h:outputText value="#{livro.autor.nome}" />
+	        </p:column>
+	        
+	        <p:column headerText="Editora">
+	            <h:outputText value="#{livro.editora.nome}" />
 	        </p:column>
 	
 	    </p:dataTable>

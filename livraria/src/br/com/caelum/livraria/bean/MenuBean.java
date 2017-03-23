@@ -29,6 +29,11 @@ public class MenuBean implements Serializable{
 		this.index = 1;
 		return "autores?faces-redirect=true";
 	}
+	
+	public String paginaEditoras() {
+		this.index = 1;
+		return "editoras?faces-redirect=true";
+	}
 
 	public String paginaLogin() {
 		this.index = 0;

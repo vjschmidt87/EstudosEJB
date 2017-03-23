@@ -16,6 +16,9 @@ public class Livro {
 	@ManyToOne
 	private Autor autor;
 	
+	@ManyToOne
+	private Editora editora;
+	
 	public Livro() {
 	}
 
@@ -47,4 +50,13 @@ public class Livro {
 	public void setAutor(Autor autor) {
 		this.autor = autor;
 	}
+
+	public Editora getEditora() {
+		return editora;
+	}
+
+	public void setEditora(Editora editora) {
+		this.editora = editora;
+	}
+	
 }
